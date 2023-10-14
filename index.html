@@ -8,31 +8,60 @@
             <h1>Clueless Recipes</h1>
             <!-- header links to other pages-->
             <div>
-                <a href = "./recipe-viewer.html">Recipe Maker</a>
+                <a href = "./create.html">Recipe Maker</a>
                 <a href = "./about.html">About</a>
             </div>
         </header>
 
         <!-- Recipe filter area-->
         <div>
-            <!-- learn to make php file for action? -->
+            <!--Add an action for hte form. Learn to use php for action? -->
             <form action = "">
                 <!--dropdown or something similar for meal-->
                 <h2>Meal</h2>
                 <div>
-                    <select>
-                        <!-- insert options here. Inclue an all option -->
+                    <select name = "meal">
+                        <!-- insert options here. Inclue an all option. Need to figure out if i need value param or not -->
+                        <option>All</option>
+                        <option>Breakfast</option>
+                        <option>Lunch</option>
+                        <option>Dinner</option>
+                        <option>Dessert</option>
+                        <option>Snack</option>
                     </select>
                 </div>
 
                 <!--bunch of checkboxes for the dietary restrictions-->
                 <h2>Dietary restrictions</h2>
                 <div>
-                    <input type = "checkbox">
+                    <div>
+                        <input type = "checkbox" id = "DietRes1" value = "Dairy free">
+                        <label for="DietRes1">Dairy free</label>
+                    </div>
+                    
+                    <div>
+                        <input type = "checkbox" id = "DietRes1" value = "Gluten free">
+                        <label for="DietRes2">Gluten free</label>
+                    </div>
+                    
+                    <div>
+                        <input type = "checkbox" id = "DietRes3" value = "Red meat">
+                        <label for = "DietRes3">Red meat</label>
+                    </div>
+                    
+                    <div>
+                        <input type = "checkbox" id = "DietRes4" value = "Vegan">
+                        <label for="DietRes4">Vegan</label>
+                    </div>
+                    
+                    <div>
+                        <input type = "checkbox" id = "DietRes5" value = "Vegetarian">
+                        <label for="DietRes5">Vegetarian</label>
+                    </div>
                 </div>
 
-                <!-- trigger to apply the filter -->
-                <input type = "submit" value ="">
+                <!-- trigger to apply the filter. Either button or submit, submit automatically clears field once submitted-->
+                <input type = "submit" value ="update">
             </form>            
         </div>
         
