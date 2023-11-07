@@ -1,0 +1,60 @@
+#MainContentContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+#NavBar{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: antiquewhite;
+    
+}
+
+.NavBarItem{
+    border: black 2px solid;
+    border-radius: 5px;
+    background-color: beige;
+    margin: 2px;
+    padding: 2px;
+    font-size: large;
+}
+
+body{
+    background-color: bisque;
+}
+
+#SearchContainer{
+    border: black 5px solid;
+    border-radius: 5px;
+    
+}
+
+#SearchContainer > *{
+    margin: 10px
+}
+
+option {
+  margin: 5px;  
+}
+
+#MainContentContainer{
+    background-color: white;
+}
+
+.Label{
+    font-size: 20px;
+    
+}
+
+.HeadingLabel{
+    font-size: 25px;
+    
+}
+
+h2{
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
