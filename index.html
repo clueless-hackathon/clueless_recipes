@@ -4,18 +4,25 @@
         <title>Clueless Recipes</title>
 
         <link href = "style.css" rel = "stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Varela+Round&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <h1>Clueless Recipes</h1>
             <!-- header links to other pages-->
             <div id = "NavBar">
-                <div class = "NavBarItem">
-                    <a href = "./create.html">Recipe Maker</a>
-                </div>
-                <div class = "NavBarItem">
-                    <a href = "./about.html">About</a>
-                </div>
+                <a href = "./create.html">
+                    <div class = "NavBarItem">
+                        Recipe Maker
+                    </div>
+                </a>
+                <a href = "./about.html">
+                    <div class = "NavBarItem">
+                        About
+                    </div>
+                </a>
             </div>
         </header>
 
@@ -77,11 +84,23 @@
                     </form>            
                 </div>
                 <div id = "RecipeContainer">
-                    <h2 class = "HeadingLabel">Results</h3>
-                    <div>
-                        <p>Sample Recipe:</p>
-                        <a href = "recipe-viewer.html">Link to recipe</a>
-
+                    <h2 class = "HeadingLabel">Results</h2>
+                    <div class = "RecipeCard">
+                        <a href = "recipe-viewer.html">
+                            <div>
+                                <h3>"Recipe Title"</h3>
+                                <p>Recipe description blah blah blah</p>
+                            </div>
+                        </a>
+                        
+                    </div>
+                    <div class = "RecipeCard">
+                        <a href = "recipe-viewer.html">
+                            <div>
+                                <h3>"Recipe Title" 2</h3>
+                                <p>Recipe description blah blah blah</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 
