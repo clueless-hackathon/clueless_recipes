@@ -1,0 +1,93 @@
+#MainContentContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    background-color: whitesmoke;
+}
+
+#NavBar{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;   
+    background-color: white;
+    border-bottom: black 5px solid;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover > *{
+    color: grey;
+}
+
+a:active > *{
+    color: red;
+}
+
+
+.NavBarItem{
+    margin: 2px;
+    padding: 2px;
+    font-size: 20px;
+    color: black;
+}
+
+body{
+    background-color: whitesmoke;
+    font-family: 'Varela Round', sans-serif;
+
+}
+
+#SearchContainer{
+    border: black 5px solid;
+    border-radius: 5px;
+    
+}
+
+#SearchContainer > *{
+    margin: 10px
+}
+
+option {
+  margin: 5px;  
+}
+
+.Label{
+    font-size: 20px;
+    
+}
+
+.HeadingLabel{
+    font-size: 25px;
+    
+}
+
+h2{
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+}
+
+#RecipeContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.RecipeCard{
+    background-color: whitesmoke;
+    border-radius: 5%;
+    box-shadow: 3px 6px 4px lightgrey, 6px 3px 4px lightgrey;
+}
