@@ -1,43 +1,59 @@
 
 <!doctype html>
 <html>
-    <head>
-        <title>Recipe creator</title>
-    </head>
+    <title>Recipe Creator</title>
+
+        <link href = "style.css" rel = "stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Varela+Round&display=swap" rel="stylesheet">
+        <script src="./main.js" type = "module"></script>
+        <script src = "create.js"></script>
     <body>
         <header>
-            <h1><a href = "index.html">Clueless Recipes</a></h1>
+            <h1>
+                <a href = "./index.html">Clueless Recipes</a>
+            </h1>
             <!-- header links to other pages-->
-            <div>
-                <!-- figure out how to make the link inactive when on page -->
-                <a href = "./create.html">Recipe Maker</a>
-                <a href = "./about.html">About</a>
+            <div id = "NavBar">
+                <a href = "./create.html">
+                    <div class = "NavBarItem">
+                        Recipe Maker
+                    </div>
+                </a>
+                <a href = "./about.html">
+                    <div class = "NavBarItem">
+                        About
+                    </div>
+                </a>
             </div>
         </header>
 
         <!-- figure out how to handle forms and form actions -->
-        <form action = "">
-            <h2>Recipe Name</h2>
-            <input type="text">
+        <div id = "FormContainer">
+            <form action = "">
+                <div id = "name">
+                    <h2>Recipe Name</h2>
+                    <input type="text">
+                </div>
 
-            <h2>Ingredients</h2>
-            <div>
-                <input type = "text">
-            </div>
-            <input type = "button" value = "+">
-            <input type = "button" value = "-">
-
-            <h2>Instructions</h2>
-            <div>
-                <input type = "text">
-            </div>
-            <!-- Not sure if break is needed or if css will fix it -->
-            <input type = "button" value = "+">
-            <input type = "button" value = "-">
-
-            <div>
-                <input type="submit">
-            </div>
-        </form>
+                <div id = "ingredients">
+                    <h2>Ingredients</h2>
+                    <input type = "text">
+                    <input type = "button" value = "+" onclick = "addTextbox('ingredients')">
+                    <input type = "button" value = "-" onclick = "removeTextbox('ingredients')">
+                </div>
+                <div id = "instructions">
+                    <h2>Instructions</h2>
+                    <input type = "text">
+                    <!-- Not sure if break is needed or if css will fix it -->
+                    <input type = "button" value = "+" onclick = "addTextbox('instructions')">
+                    <input type = "button" value = "-" onclick = "removeTextbox('instructions')">
+                </div>
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
     </body>
 </html>

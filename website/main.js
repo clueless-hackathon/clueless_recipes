@@ -25,7 +25,7 @@ const auth = getAuth(app);
 const database = getDatabase(app);
 
 
-
+//basic authentication testing
 onAuthStateChanged(auth, user => {
     if(user != null) {
         console.log("logged in!");
@@ -34,8 +34,7 @@ onAuthStateChanged(auth, user => {
     }
 });
 
-
-var recipesLoaded = 0;
+//A recipe to test database writing and accessing
 const testRecipe = {
     title: "Grilled Cheese",
     recipeSteps: [
@@ -90,6 +89,8 @@ class Recipe{
 
 }
 
+//edits HTML to add recipe passed
+//TODO: Organize the data to planned recipe card layout (and make it look pretty! <3)
 function displayRecipesMainPage(recipe){
     const div = document.createElement('div');
     const text = document.createTextNode(recipe);
@@ -97,12 +98,17 @@ function displayRecipesMainPage(recipe){
     document.getElementById('RecipeContainer').appendChild(div);
 }
 
+//creates takes recipe object and writes to database using a unique ID
 function writeRecipe(recipe){
-    set(ref(database, 'recipes/' + uuidv7()), recipe);
+    set(ref(database, 'recipes/' + uuidv4()), recipe);
 }
 
-console.log(testRecipe);
+var loadedRecipes = [];
 
+//adds recipes loaded from recipe database to the loaded recipes array
 onValue(ref(database, 'recipes/'), (snapshot) => {
-    displayRecipesMainPage(Object.values(snapshot));
+    loadedRecipes.push(Object.values(snapshot.val()));
 });
+
+writeRecipe(testRecipe);
+console.log(loadedRecipes);
