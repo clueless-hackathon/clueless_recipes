@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { getDatabase } from 'firebase/database';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
+import { getDatabase, get, set, ref, child, onValue } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js';
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -23,6 +24,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
+
+
 onAuthStateChanged(auth, user => {
     if(user != null) {
         console.log("logged in!");
@@ -31,6 +34,8 @@ onAuthStateChanged(auth, user => {
     }
 });
 
+
+var recipesLoaded = 0;
 const testRecipe = {
     title: "Grilled Cheese",
     recipeSteps: [
@@ -71,17 +76,33 @@ const testRecipe = {
 }
 
 class Recipe{
+    constructor(title, author, ingredients, recipeSteps, description, dietaryRestrictions){
+        this.title = title;
+        this.author = author;
+        this.ingredients = ingredients;
+        this.recipeSteps = recipeSteps;
+        this.description = description;
+        this.dietaryRestrictions = dietaryRestrictions;
+        this.rating = 0;
+        this.image = null;
+    }
+
 
 }
-const loadedRecipes = [];
 
-function loadRecipes(){
-
+function displayRecipesMainPage(recipe){
+    const div = document.createElement('div');
+    const text = document.createTextNode(recipe);
+    div.appendChild(text);
+    document.getElementById('RecipeContainer').appendChild(div);
 }
 
-function displayRecipes(){
-
+function writeRecipe(recipe){
+    set(ref(database, 'recipes/' + uuidv7()), recipe);
 }
-
 
 console.log(testRecipe);
+
+onValue(ref(database, 'recipes/'), (snapshot) => {
+    displayRecipesMainPage(Object.values(snapshot));
+});
